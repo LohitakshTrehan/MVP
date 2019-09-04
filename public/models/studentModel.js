@@ -15,4 +15,8 @@ export class StudentModel {
     getRollNumber(){
         return this.getRollNumber;
     }
+
+    setRollNumber(rollNumber){
+        thiss.rollNumber = rollNumber;
+    }
 }
