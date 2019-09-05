@@ -18,4 +18,4 @@ var presenter = studentDataPresenter(view, model);
 
 var studentDetail = document.getElementById("student-detail");
 studentDetail.appendChild(presenter.getView().printView());
-presenter.setModelStateInView(model);  //Passing model reference
+presenter.setModelStateInView();  //Passing model reference
