@@ -4,15 +4,18 @@ import { studentDataPresenter } from "./modules/studentDataModule/studentDataPre
 import { studentDataView } from "./modules/studentDataModule/studentDataView.js";
 
 /*---------------------      Model is created and it fetches data from server    -------------------*/
+
 var model = new studentDataModel();
 model.setName("Manoj");
 model.setRollNumber("1234");
+
+/*---------------------                  Creating View and Presenter              ------------------*/
+
+var view = studentDataView();
+var presenter = studentDataPresenter(view, model);
+
 /*---------------------                                                          ------------------*/
 
-var view = new studentDataView();
-var presenter = new studentDataPresenter(view);
 var studentDetail = document.getElementById("student-detail");
-
-
 studentDetail.appendChild(presenter.getView().printView());
-presenter.setModelStateInView(model);
+presenter.setModelStateInView(model);  //Passing model reference
